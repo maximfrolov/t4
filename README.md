@@ -1,5 +1,8 @@
-# Minimal web-application based on T4 framework
+# Training project based on T4 framework
 
-Use 
-<code>composer create-project pr-of-it/t4-app-mini --stability="dev"</code>
-to install this application
+### Домашнее задание № 1
+
+#### Пункт 4
+Layouts\Index.html является родительским шаблоном по отношению к Templates\Index\Default.html
+Templates\Index\Default.html, в свою очередь, наследуется от Layouts\Index.html и расширяет его.
+

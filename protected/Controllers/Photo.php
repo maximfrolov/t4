@@ -15,6 +15,6 @@ class Photo
 
     public function actionLast()
     {
-        
+
     }
 }
