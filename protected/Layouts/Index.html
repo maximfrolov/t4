@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ app.config.projectName }}</title>
+    <title>{% block title %}{{ app.config.projectName }}{% endblock %}</title>
     {{ publishCss() }}
 </head>
 <body>
