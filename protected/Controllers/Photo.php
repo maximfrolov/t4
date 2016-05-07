@@ -8,6 +8,9 @@ class Photo
     extends Controller
 {
 
+    public function actionDefault()
+    {
 
+    }
 
 }
