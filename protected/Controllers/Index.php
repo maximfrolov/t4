@@ -13,4 +13,8 @@ class Index
        $this->data->projectName = $this->app->config->projectName;
     }
 
+    public function actionAbout()
+    {
+
+    }
 }
