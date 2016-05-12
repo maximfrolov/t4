@@ -10,7 +10,7 @@ class Index
 
     public function actionDefault()
     {
-       $this->data->projectName = $this->app->config->projectName;
+        $this->data->projectName = $this->app->config->projectName;
     }
 
     public function actionAbout()
