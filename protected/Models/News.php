@@ -18,7 +18,7 @@ class News
         return $arrayObjectsNews;
     }
 
-    public function findOne($id)
+    public function findOne(int $id)
     {
         return new Article($this->news[$id - 1]->toArray());
     }
