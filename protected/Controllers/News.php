@@ -20,4 +20,10 @@ class News
         $this->data->article = $article->findOne($id);
     }
 
+    public function actionLast()
+    {
+        $article = new \App\Models\News(ROOT_PATH_PROTECTED . DS . 'dbNews.php');
+        $this->data->article = $article->getLast();
+    }
+
 }
