@@ -20,7 +20,8 @@ class News
 
     public function findOne(int $id)
     {
-        return new Article($this->news[$id - 1]->toArray());
+        $arrayNews = $this->news->toArray();
+        return new Article($arrayNews[$id - 1]);
     }
 
     public function getLast()
