@@ -10,12 +10,12 @@ class News
 
     public function findAll()
     {
-        $arrayObjectsNews = $this->news->__data;
-        krsort($arrayObjectsNews);
-        foreach ($arrayObjectsNews as $item => $objectArticle) {
-            $arrayObjectsNews[$item] = new Article($objectArticle->toArray());
+        $arrayNews = $this->news->toArray();
+        krsort($arrayNews);
+        foreach ($arrayNews as $item => $Article) {
+            $arrayNews[$item] = new Article($Article);
         }
-        return $arrayObjectsNews;
+        return $arrayNews;
     }
 
     public function findOne(int $id)
