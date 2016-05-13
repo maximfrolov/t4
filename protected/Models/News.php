@@ -10,23 +10,24 @@ class News
 
     public function findAll()
     {
-        $arrayNews = $this->news->toArray();
+        return $this->news->toArray();
+    }
+
+    public function findAllDesc()
+    {
+        $arrayNews = $this->findAll();
         krsort($arrayNews);
-        foreach ($arrayNews as $item => $Article) {
-            $arrayNews[$item] = new Article($Article);
-        }
         return $arrayNews;
     }
 
     public function findOne(int $id)
     {
-        $arrayNews = $this->news->toArray();
-        return new Article($arrayNews[$id - 1]);
+        return new Article($this->findAll()[$id - 1]);
     }
 
     public function getLast()
     {
-        return new Article(end($this->news->toArray()));
+        return new Article(end($this->findAll()));
     }
 
 }

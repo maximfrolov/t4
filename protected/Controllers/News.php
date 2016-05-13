@@ -11,7 +11,7 @@ class News
     public function actionAll()
     {
         $news = new \App\Models\News(ROOT_PATH_PROTECTED . DS . 'dbNews.php');
-        $this->data->news = $news->findAll();
+        $this->data->news = $news->findAllDesc();
     }
 
     public function actionOne($id)
