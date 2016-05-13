@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Article;
 use T4\Mvc\Controller;
 
 class News
@@ -24,6 +25,16 @@ class News
     {
         $article = new \App\Models\News(ROOT_PATH_PROTECTED . DS . 'dbNews.php');
         $this->data->article = $article->getLast();
+    }
+
+    public function actionForm()
+    {
+
+    }
+
+    public function actionAdd(Article $data)
+    {
+
     }
 
 }
