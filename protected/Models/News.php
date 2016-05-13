@@ -25,7 +25,7 @@ class News
 
     public function getLast()
     {
-        return new Article($this->findOne(count($this->news))->toArray());
+        return new Article(end($this->news->toArray()));
     }
 
 }
