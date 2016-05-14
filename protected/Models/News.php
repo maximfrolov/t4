@@ -8,26 +8,28 @@ class News
     extends Config
 {
 
-    public function findAll()
+    const PATH_TO_DB = ROOT_PATH_PROTECTED . DS . 'dbNews.php';
+
+    public static function findAll()
     {
-        return $this->news->toArray();
+        return (new self(self::PATH_TO_DB))->news->toArray();
     }
 
-    public function findAllDesc()
+    public static function findAllDesc()
     {
-        $arrayNews = $this->findAll();
+        $arrayNews = self::findAll();
         krsort($arrayNews);
         return $arrayNews;
     }
 
-    public function findOne(int $id)
+    public static function findOne(int $id)
     {
-        return new Article($this->findAll()[$id - 1]);
+        return new Article(self::findAll()[$id - 1]);
     }
 
-    public function getLast()
+    public static function getLast()
     {
-        return new Article(end($this->findAll()));
+        return new Article(end(self::findAll()));
     }
 
 }
