@@ -4,6 +4,10 @@ namespace App\Controllers;
 
 use T4\Mvc\Controller;
 
+/**
+ * Class Index
+ * @package App\Controllers
+ */
 class Index
     extends Controller
 {
