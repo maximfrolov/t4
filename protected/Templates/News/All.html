@@ -1,5 +1,5 @@
 {% extends 'Index.html' %}
-{% block title %}Все новости{% endblock %}
+{% block title %}Все новости | {{ parent() }}{% endblock %}
 {% block content %}
 <div class="container">
     <h1>Страница "Все новости"</h1>
@@ -7,17 +7,19 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <p>
-                <a href="/news/{{ article.id }}.html">
+                <a href="/news/{{ article.__id }}.html">
                     <h3>{{ article.title }}</h3>
                 </a>
             </p>
         </div>
         <div class="panel-body">
-            <img src="{{ article.image }}" alt="{{ article.imageAlt }}">
+            {% if article.image %}
+            <img src="{{ article.image }}">
+            {% endif %}
             <p>{{ article.text }}</p>
         </div>
         <div class="panel-footer">
-            <p>Автор: {{ article.author }}</p>
+            <p>{% if article.date %}Дата: {{ article.date }}{% endif %}</p>
         </div>
     </div>
     {% endfor %}
