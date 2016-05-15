@@ -19,7 +19,7 @@ class News
      */
     public function actionAll()
     {
-        $this->data->news = \App\Models\News::findAllDesc();
+        $this->data->news = \App\Models\News::findAll(['order' => '__id DESC']);
     }
 
     /**
@@ -29,7 +29,7 @@ class News
      */
     public function actionOne(int $id)
     {
-        $this->data->article = \App\Models\News::findOne($id);
+        $this->data->article = \App\Models\News::findByPK($id);
     }
 
     /**
@@ -38,7 +38,7 @@ class News
      */
     public function actionLast()
     {
-        $this->data->article = \App\Models\News::getLast();
+        $this->data->article = \App\Models\News::find(['order' => '__id DESC']);
     }
 
     /**
