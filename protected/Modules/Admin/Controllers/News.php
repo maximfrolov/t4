@@ -5,6 +5,10 @@ namespace App\Modules\Admin\Controllers;
 use App\Models\Article;
 use T4\Mvc\Controller;
 
+/**
+ * Class News
+ * @package App\Modules\Admin\Controllers
+ */
 class News
     extends Controller
 {
@@ -14,7 +18,7 @@ class News
      */
     public function actionTable()
     {
-
+        $this->data->news = \App\Models\News::findAll(['order' => '__id DESC']);
     }
 
     /**
