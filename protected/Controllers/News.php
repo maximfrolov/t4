@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\Article;
 use T4\Mvc\Controller;
 
 /**
@@ -39,23 +38,6 @@ class News
     public function actionLast()
     {
         $this->data->article = \App\Models\News::find(['order' => '__id DESC']);
-    }
-
-    /**
-     * Метод-экшн для вывода формы добавления новости.
-     */
-    public function actionForm()
-    {
-
-    }
-
-    /**
-     * Метод-экшн для добавления новости.
-     * @param Article $data
-     */
-    public function actionAdd(Article $data)
-    {
-
     }
 
 }
