@@ -14,7 +14,7 @@ class News
 {
 
     /**
-     * Метод-экшн для вывода таблицы новостей.
+     * Метод-экшн вывода таблицы новостей.
      */
     public function actionTable()
     {
@@ -22,7 +22,7 @@ class News
     }
 
     /**
-     * Метод-экшн для вывода формы добавления новости.
+     * Метод-экшн вывода формы добавления новости.
      */
     public function actionForm()
     {
@@ -30,7 +30,7 @@ class News
     }
 
     /**
-     * Метод-экшн для добавления новости.
+     * Метод-экшн добавления новости.
      * @param Article $data
      */
     public function actionAdd(Article $data)
@@ -38,5 +38,14 @@ class News
 
     }
 
+    /**
+     * Метод-экшн удаления новости по id
+     * @param int $id
+     */
+    public function actionDelete(int $id)
+    {
+        \App\Models\News::findByPK($id)->delete();
+        $this->redirect('/admin/news');
+    }
 
 }
