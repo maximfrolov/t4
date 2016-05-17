@@ -22,23 +22,33 @@ class News
     }
 
     /**
-     * Метод-экшн вывода формы добавления новости.
+     * Метод-экшн вывода формы добавления и редактирования новости.
+     * @param null $id
      */
-    public function actionForm()
+    public function actionEdit($id = null)
     {
-
+        if (null !== $id) {
+            $this->data->article = \App\Models\News::findByPK($id);
+            if (empty($this->data->article)) {
+                $this->redirect('/admin/news');
+            }
+        } else {
+            $this->data->article = new \App\Models\News();
+        }
     }
 
     /**
-     * Метод-экшн добавления новости.
+     * Метод-экшн сохранения новости.
      */
-    public function actionAdd()
+    public function actionSave()
     {
-        if (empty($this->app->request->post->__id)) {
-            $item = new \App\Models\News();
-            $item->fill($this->app->request->post);
-            $item->save();
+        if (!empty($this->app->request->post->id)) {
+            $article = \App\Models\News::findByPK($this->app->request->post->id);
+        } else {
+            $article = new \App\Models\News();
         }
+        $article->fill($this->app->request->post);
+        $article->save();
         $this->redirect('/admin/news');
     }
 
