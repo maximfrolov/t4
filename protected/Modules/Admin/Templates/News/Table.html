@@ -21,7 +21,7 @@
         <tr>
             <td>{{ article.__id }}</td>
             <td>{{ article.title }}</td>
-            <td>{{ article.date }}</td>
+            <td>{{ article.date  | date('d.m.Y') }}</td>
             <td>
                 <div class="pull-right">
                     <a href="/admin/news/edit/{{ article.__id }}.html">

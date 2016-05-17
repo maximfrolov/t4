@@ -11,6 +11,6 @@
         <p>{{ article.text }}</p>
     </div>
     <div class="panel-footer">
-        <p>{% if article.date %}Дата: {{ article.date }}{% endif %}</p>
+        <p>{% if article.date %}Дата: {{ article.date  | date('d.m.Y') }}{% endif %}</p>
     </div>
 </div>
