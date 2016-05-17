@@ -31,11 +31,15 @@ class News
 
     /**
      * Метод-экшн добавления новости.
-     * @param Article $data
      */
-    public function actionAdd(Article $data)
+    public function actionAdd()
     {
-
+        if (empty($this->app->request->post->__id)) {
+            $item = new \App\Models\News();
+            $item->fill($this->app->request->post);
+            $item->save();
+        }
+        $this->redirect('/admin/news');
     }
 
     /**
