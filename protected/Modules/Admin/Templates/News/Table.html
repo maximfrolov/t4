@@ -3,16 +3,17 @@
 {% block content %}
 <div class="container">
     <h1>Таблица новостей</h1>
-    <a href="/admin/news/form.html">
-        <button class="btn btn-sm btn-success pull-right">Добавить новость</button>
-    </a>
     <table class="table">
         <thead>
         <tr>
             <th>ID Новости</th>
             <th>Заголовок</th>
             <th>Дата публикации</th>
-            <th></th>
+            <th>
+                <a href="/admin/news/form.html">
+                    <button class="btn btn-sm btn-success pull-right">Добавить новость</button>
+                </a>
+            </th>
         </tr>
         </thead>
         <tbody>
@@ -22,9 +23,14 @@
             <td>{{ article.title }}</td>
             <td>{{ article.date }}</td>
             <td>
-                <a href="/admin/news/delete/{{ article.__id }}.html">
-                    <button class="btn btn-sm btn-danger pull-right">Удалить</button>
-                </a>
+                <div class="pull-right">
+                    <a href="/admin/news/edit/{{ article.__id }}.html">
+                        <button class="btn btn-sm btn-primary">Редактировать</button>
+                    </a>
+                    <a href="/admin/news/delete/{{ article.__id }}.html">
+                        <button class="btn btn-sm btn-danger">Удалить</button>
+                    </a>
+                </div>
             </td>
         </tr>
         {% endfor %}
