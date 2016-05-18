@@ -1,5 +1,5 @@
-{% extends 'Index.html' %}
-{% block title %}Форма {% if article.isNew %}добавления новости{% else %}редактирования новости{% endif %}{% endblock title %}
+{% extends 'Admin.html' %}
+{% block title %}Форма {% if article.isNew %}добавления новости{% else %}редактирования новости{% endif %} | {{ parent() }}{% endblock title %}
 {% block content %}
 <div class="container">
     <div style="width: 65%; margin: 0 auto;">
