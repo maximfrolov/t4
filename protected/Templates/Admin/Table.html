@@ -10,8 +10,8 @@
             <th>Заголовок</th>
             <th>Дата публикации</th>
             <th>
-                <a href="/admin/edit.html">
-                    <button class="btn btn-sm btn-success pull-right">Добавить новость</button>
+                <a href="/admin/edit.html" class="btn btn-sm btn-success pull-right">
+                    Добавить новость
                 </a>
             </th>
         </tr>
@@ -24,11 +24,11 @@
             <td>{{ item.date  | date('d.m.Y') }}</td>
             <td>
                 <div class="pull-right">
-                    <a href="/admin/edit.html?id={{ item.pk }}">
-                        <button class="btn btn-sm btn-primary">Редактировать</button>
+                    <a href="/admin/edit.html?id={{ item.pk }}" class="btn btn-sm btn-primary">
+                        Редактировать
                     </a>
-                    <a href="/admin/delete.html?id={{ item.pk }}">
-                        <button class="btn btn-sm btn-danger">Удалить</button>
+                    <a href="/admin/delete.html?id={{ item.pk }}" class="btn btn-sm btn-danger">
+                        Удалить
                     </a>
                 </div>
             </td>
