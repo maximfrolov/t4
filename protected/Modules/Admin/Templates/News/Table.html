@@ -19,7 +19,7 @@
         <tbody>
         {% for article in news %}
         <tr>
-            <td>{{ article.__id }}</td>
+            <td>{{ article.pk }}</td>
             <td>{{ article.title }}</td>
             <td>{{ article.date  | date('d.m.Y') }}</td>
             <td>

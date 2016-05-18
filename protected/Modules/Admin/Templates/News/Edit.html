@@ -7,7 +7,7 @@
     </div>
     <form class="form-horizontal" method="post" action="/admin/news/save.html" enctype="multipart/form-data">
         {% if not article.isNew %}
-        <input type="hidden" id="id" name="id" value="{{article.__id}}">
+        <input type="hidden" id="id" name="id" value="{{article.pk}}">
         {% endif %}
         <div class="form-group">
             <label for="title" class="col-sm-2 control-label">Заголовок</label>
