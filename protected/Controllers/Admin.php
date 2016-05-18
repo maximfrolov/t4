@@ -57,8 +57,9 @@ class Admin
      */
     public function actionDelete(int $id)
     {
-        if (!empty($id)) {
-            \App\Models\News::findByPK($id)->delete();
+        $item = \App\Models\News::findByPK($id);
+        if (!empty($item)) {
+            $item->delete();
         }
         $this->redirect('/admin');
     }
