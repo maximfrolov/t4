@@ -5,7 +5,7 @@
     <div style="width: 65%; margin: 0 auto;">
         <h1>Форма {% if item.isNew %}добавления новости{% else %}редактирования новости{% endif %}</h1>
     </div>
-    <form class="form-horizontal" method="post" action="/admin/news/save.html" enctype="multipart/form-data">
+    <form class="form-horizontal" method="post" action="/admin/save.html" enctype="multipart/form-data">
         {% if not item.isNew %}
         <input type="hidden" id="id" name="id" value="{{item.pk}}">
         {% endif %}
@@ -33,7 +33,7 @@
                 {% if item.isNew %}
                 <button type="reset" class="btn btn-danger">Сброс</button>
                 {% endif %}
-                <a href="/admin/news/table.html" class="btn btn-default">Отменить</a>
+                <a href="/admin/table.html" class="btn btn-default">Отменить</a>
             </div>
         </div>
     </form>

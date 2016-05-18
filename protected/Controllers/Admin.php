@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Modules\Admin\Controllers;
+namespace App\Controllers;
 
-use App\Models\Article;
 use T4\Mvc\Controller;
 
 /**
- * Class News
- * @package App\Modules\Admin\Controllers
+ * Class Admin
+ * @package App\Controllers
  */
-class News
+class Admin
     extends Controller
 {
 
@@ -30,7 +29,7 @@ class News
         if (null !== $id) {
             $this->data->item = \App\Models\News::findByPK($id);
             if (empty($this->data->item)) {
-                $this->redirect('/admin/news');
+                $this->redirect('/admin');
             }
         } else {
             $this->data->item = new \App\Models\News();
@@ -49,7 +48,7 @@ class News
         }
         $item->fill($this->app->request->post);
         $item->save();
-        $this->redirect('/admin/news');
+        $this->redirect('/admin');
     }
 
     /**
@@ -61,7 +60,7 @@ class News
         if (!empty($id)) {
             \App\Models\News::findByPK($id)->delete();
         }
-        $this->redirect('/admin/news');
+        $this->redirect('/admin');
     }
 
 }
