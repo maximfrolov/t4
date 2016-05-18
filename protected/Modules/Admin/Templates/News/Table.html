@@ -17,17 +17,17 @@
         </tr>
         </thead>
         <tbody>
-        {% for article in news %}
+        {% for item in items %}
         <tr>
-            <td>{{ article.pk }}</td>
-            <td>{{ article.title }}</td>
-            <td>{{ article.date  | date('d.m.Y') }}</td>
+            <td>{{ item.pk }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.date  | date('d.m.Y') }}</td>
             <td>
                 <div class="pull-right">
-                    <a href="/admin/news/edit.html/?id={{ article.__id }}">
+                    <a href="/admin/news/edit.html/?id={{ item.pk }}">
                         <button class="btn btn-sm btn-primary">Редактировать</button>
                     </a>
-                    <a href="/admin/news/delete.html/?id={{ article.__id }}">
+                    <a href="/admin/news/delete.html/?id={{ item.pk }}">
                         <button class="btn btn-sm btn-danger">Удалить</button>
                     </a>
                 </div>
