@@ -10,7 +10,7 @@
             <th>Заголовок</th>
             <th>Дата публикации</th>
             <th>
-                <a href="/admin/edit.html" class="btn btn-sm btn-success pull-right">
+                <a href="/admin/news/edit.html" class="btn btn-sm btn-success pull-right">
                     Добавить новость
                 </a>
             </th>
@@ -24,10 +24,10 @@
             <td>{{ item.date  | date('d.m.Y') }}</td>
             <td>
                 <div class="pull-right">
-                    <a href="/admin/edit.html?id={{ item.pk }}" class="btn btn-sm btn-primary">
+                    <a href="/admin/news/edit.html?id={{ item.pk }}" class="btn btn-sm btn-primary">
                         Редактировать
                     </a>
-                    <a href="/admin/delete.html?id={{ item.pk }}" class="btn btn-sm btn-danger">
+                    <a href="/admin/news/delete.html?id={{ item.pk }}" class="btn btn-sm btn-danger">
                         Удалить
                     </a>
                 </div>
