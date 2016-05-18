@@ -15,7 +15,7 @@ class Admin
     /**
      * Метод-экшн вывода таблицы новостей.
      */
-    public function actionTable()
+    public function actionDefault()
     {
         $this->data->items = \App\Models\News::findAll(['order' => '__id DESC']);
     }
