@@ -4,14 +4,14 @@ namespace App\Migrations;
 
 use T4\Orm\Migration;
 
-class m_1463589324_createCategories
+class m_1463655505_createCategories
     extends Migration
 {
 
     public function up()
     {
         $this->createTable('categories', [
-            'title' => ['type' => 'string'],
+           'title' => ['type' => 'string'],
         ], [], ['tree']);
     }
 

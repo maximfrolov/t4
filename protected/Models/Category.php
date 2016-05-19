@@ -13,13 +13,13 @@ use T4\Orm\Model;
 class Category
     extends Model
 {
-    protected static $schema = [
+    static protected $schema = [
         'table' => 'categories',
         'columns' => [
             'title' => ['type' => 'string'],
         ],
     ];
 
-    protected static $extension = ['tree'];
+    static protected $extensions = ['tree'];
 
 }
